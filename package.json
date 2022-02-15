@@ -38,10 +38,6 @@
   "eslintConfig": {
     "extends": "@saulx/eslint-config"
   },
-  "dependencies": {
-    "is-plain-obj": "^3.0.0",
-    "@saulx/hash": "^1.1.0"
-  },
   "devDependencies": {
     "@saulx/eslint-config": "https://github.com/atelier-saulx/eslint-config",
     "@saulx/prettier-config": "https://github.com/atelier-saulx/prettier-config",
