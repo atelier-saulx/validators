@@ -1,7 +1,7 @@
 import test from 'ava'
 import * as validators from '../src'
 
-test('validators', async t => {
+test('validators', async (t) => {
   const aNumber = 10
   t.true(validators.number(aNumber))
   t.true(validators.float(aNumber))
@@ -21,4 +21,14 @@ test('validators', async t => {
 
   const email = 'jim+hello@saulx.com'
   t.true(validators.email(email))
+})
+
+test('password validators', async (t) => {
+  t.false(validators.password('monkey'))
+  t.false(validators.password('123'))
+  t.false(validators.password('password'))
+  t.false(validators.validatePassword('password').valid)
+
+  t.true(validators.password('Schaap99!'))
+  t.true(validators.validatePassword('Schaap99!').valid)
 })
