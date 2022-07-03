@@ -24,9 +24,15 @@ test('validators', async (t) => {
 })
 
 test('password validators', async (t) => {
+  //@ts-ignore
+  t.false(validators.password())
+  t.false(validators.password(''))
   t.false(validators.password('monkey'))
   t.false(validators.password('123'))
   t.false(validators.password('password'))
+  //@ts-ignore
+  t.false(validators.validatePassword().valid)
+  t.false(validators.validatePassword('').valid)
   t.false(validators.validatePassword('password').valid)
 
   t.true(validators.password('Schaap99!'))

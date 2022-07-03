@@ -63,7 +63,8 @@ export const id = (payload: string): boolean => {
 
 const MINIMUM_PASSWORD_ENTROPY = 50
 export const password = (payload: string): boolean => {
-  return payload && passwordEntropy(payload) >= MINIMUM_PASSWORD_ENTROPY
+  if (!payload) return false
+  return passwordEntropy(payload) >= MINIMUM_PASSWORD_ENTROPY
 }
 
 export const validatePassword = (
