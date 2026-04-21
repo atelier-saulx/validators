@@ -1,11 +1,11 @@
 {
   "name": "@saulx/validators",
   "main": "./dist/index.js",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "test": "ava --verbose"
+    "test": "vitest"
   },
   "repository": "https://github.com/atelier-saulx/validators",
   "lint-staged": {
@@ -18,19 +18,6 @@
       "git add"
     ]
   },
-  "ava": {
-    "files": [
-      "test/**/*.ts",
-      "!test/examples"
-    ],
-    "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
-  },
   "browser": {
     "stream": false
   },
@@ -41,9 +28,8 @@
   "devDependencies": {
     "@saulx/eslint-config": "https://github.com/atelier-saulx/eslint-config",
     "@saulx/prettier-config": "https://github.com/atelier-saulx/prettier-config",
-    "ava": "2.4.0",
     "husky": "^3.0.8",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.3",
+    "vitest": "^3.0.0"
   }
 }
